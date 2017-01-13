@@ -21,8 +21,36 @@ namespace MvcCachingSample.Controllers
             return View();
         }
 
-        [OutputCache(Location = System.Web.UI.OutputCacheLocation.Server, Duration = 1800, VaryByParam = "process")]
+        //[OutputCache(Location = System.Web.UI.OutputCacheLocation.Server, Duration = 1800, VaryByParam = "process")]
         public ActionResult Dashboard(string process)
+        {
+            if (_textboxNumberByProcess.ContainsKey(process.ToLower()))
+            {
+                ViewBag.ProcessName = process;
+                ViewBag.TextBoxCount = _textboxNumberByProcess[process.ToLower()];
+                return View();
+            }
+            else
+            {
+                return this.RedirectToAction("Error404", "Error");
+            }
+        }
+
+        public ActionResult MyJobs(string process)
+        {
+            if (_textboxNumberByProcess.ContainsKey(process.ToLower()))
+            {
+                ViewBag.ProcessName = process;
+                ViewBag.TextBoxCount = _textboxNumberByProcess[process.ToLower()];
+                return View();
+            }
+            else
+            {
+                return this.RedirectToAction("Error404", "Error");
+            }
+        }
+
+        public ActionResult Admin(string process)
         {
             if (_textboxNumberByProcess.ContainsKey(process.ToLower()))
             {
