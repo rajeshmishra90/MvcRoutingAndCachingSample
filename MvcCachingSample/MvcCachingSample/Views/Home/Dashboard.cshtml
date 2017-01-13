@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int textBoxCount = Convert.ToInt32(ViewBag.TextBoxCount);
+    string processName = ViewBag.ProcessName;
+}
+
+<h2>@processName Dashboard</h2>
+<div class="row">
+    <div class="col-md-12">
+        @for (int i = 0; i < textBoxCount; i++)
+        {
+            @*<div class="class="col-md-3"></div>*@
+            <div class="col-md-12">
+                <label>@(i + 1)</label>
+                <input type="text" placeholder="@processName" maxlength="@(textBoxCount*10)" />
+            </div>
+            <br />
+        }
+    </div>    
+</div>
+<div class="row">
+    <div class="col-md-6 col-md-offset-1">
+        <button>Submit</button>
+    </div>
+</div>
