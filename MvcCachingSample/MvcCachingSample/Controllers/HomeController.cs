@@ -64,6 +64,18 @@ namespace MvcCachingSample.Controllers
             }
         }
 
+        [HttpGet]
+        public JsonResult GetData()
+        {
+            List<Tuple<int, string, string>> data = new List<Tuple<int, string, string>>();
+            data.Add(new Tuple<int, string, string>(1, "Ram", "Lakhan"));
+            data.Add(new Tuple<int, string, string>(2, "Kiran", "Sharma"));
+            data.Add(new Tuple<int, string, string>(3, "Ashish", "Gupta"));
+            data.Add(new Tuple<int, string, string>(4, "Data", "Test"));
+            data.Add(new Tuple<int, string, string>(5, "Manmohan", "Singh"));
+            return this.Json(new { IsSuccess = true, Data = data }, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
