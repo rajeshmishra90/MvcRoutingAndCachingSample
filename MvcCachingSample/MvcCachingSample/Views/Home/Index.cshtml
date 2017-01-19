@@ -6,9 +6,9 @@
     <div class="col-md-12">
         <div>
             <ul>
-                <li class="col-md-4"><a href="#">Monitoring</a></li>
-                <li class="col-md-4"><a href="#">My Jobs</a></li>
-                <li class="col-md-4"><a href="#">Admin</a></li>
+                <li class="col-md-4"><a href="#/idc/dashboard">Monitoring</a></li>
+                <li class="col-md-4"><a href="#/MyJobs/idc">My Jobs</a></li>
+                <li class="col-md-4"><a href="#/Admin/idc">Admin</a></li>
             </ul>
 
         </div>
@@ -16,5 +16,8 @@
     <hr />
     <div class="col-md-6 col-lg-offset-1">
         <p>My dynamic Content</p>
+        <div>
+            <div ng-view></div>
+        </div>
     </div>
 </div>

@@ -14,8 +14,8 @@ namespace MvcCachingSample
             //routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.MapRoute(
                 name: "Dashboard",
-                url: "{process}/dashboard",
-                defaults: new { controller = "Home", action="dashboard" }
+                url: "{process}/{action}",
+                defaults: new { controller = "Home" }
             );
             routes.MapRoute(
                 name: "Default",
